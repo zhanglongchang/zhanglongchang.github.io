@@ -1,0 +1,754 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      为大家提供一些免费的API | Hexo
+    
+  </title>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" target="_blank" rel="noopener" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" target="_blank" id="time_is_link" rel="nofollow noopener" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Current post&nbsp;:&nbsp;《为大家提供一些免费的API》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" target="_blank" rel="noopener" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" itemprop="url">
+		为大家提供一些免费的API
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	Posted on
+
+	<a href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" itemprop="url">
+		<time datetime="2019-11-17T03:14:14.856Z" itemprop="datePublished">
+	  		2019-11-17
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	Updated on
+
+	<a href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" itemprop="url">
+		<time datetime="2019-11-17T03:14:14.856Z" itemprop="dateUpdated">
+	  		2019-11-16
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<p>为大家提供一些免费的API</p>
+<h2 id="以下api由简书提供："><a href="#以下api由简书提供：" class="headerlink" title="以下api由简书提供："></a>以下api由简书提供：</h2><p>​            （1）.视频接口                        <a href="https://api.apiopen.top/todayVideo" target="_blank" rel="noopener">https://api.apiopen.top/todayVideo</a></p>
+<p>​            （2）.新闻接口                        <a href="https://www.apiopen.top/journalismApi" target="_blank" rel="noopener">https://www.apiopen.top/journalismApi</a></p>
+<p>​            （3）.小说接口                        <a href="https://www.apiopen.top/novelApi" target="_blank" rel="noopener">https://www.apiopen.top/novelApi</a></p>
+<p>​            （4）.音乐排行榜接口            <a href="https://api.apiopen.top/musicRankings" target="_blank" rel="noopener">https://api.apiopen.top/musicRankings</a></p>
+<p>​            （5）.音乐详情接口                <a href="https://api.apiopen.top/musicDetails?id=604392760" target="_blank" rel="noopener">https://api.apiopen.top/musicDetails?id=604392760</a>    </p>
+<p>​            （6）.音乐搜索接口                <a href="https://api.apiopen.top/searchMusic?name=风筝误" target="_blank" rel="noopener">https://api.apiopen.top/searchMusic?name=风筝误</a></p>
+<p>​            （7）.实时段子接口                <a href="https://api.apiopen.top/getJoke?page=1&amp;count=20&amp;type=video" target="_blank" rel="noopener">https://api.apiopen.top/getJoke?page=1&amp;count=20&amp;type=video</a></p>
+<p>​            （8）.用户登录接口                </p>
+<p>​                <a href="https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&amp;phone=13594347817&amp;passwd=123654" target="_blank" rel="noopener">https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&amp;phone=13594347817&amp;passwd=123654</a></p>
+<p>​            （9）.用户登录接口</p>
+<p>​                <a href="https://www.apiopen.top/login?key=00d91e8e0cca2b76f515926a36db68f5&amp;phone=13594347817&amp;passwd=123456" target="_blank" rel="noopener">https://www.apiopen.top/login?key=00d91e8e0cca2b76f515926a36db68f5&amp;phone=13594347817&amp;passwd=123456</a></p>
+<h2 id="以下api由天行数据提供"><a href="#以下api由天行数据提供" class="headerlink" title="以下api由天行数据提供"></a>以下api由天行数据提供</h2><p>​            （1）.头条新闻接口            <a href="http://api.tianapi.com/topnews/?key=自己申请的key" target="_blank" rel="noopener">http://api.tianapi.com/topnews/?key=自己申请的key</a></p>
+<p>​            （2）.每日简报                    <a href="http://api.tianapi.com/huabian/?key=自己申请的key" target="_blank" rel="noopener">http://api.tianapi.com/huabian/?key=自己申请的key</a></p>
+<p>​            （3）.美女图片                    <a href="http://api.tianapi.com/meinv/?key=自己申请的key&amp;num=10" target="_blank" rel="noopener">http://api.tianapi.com/meinv/?key=自己申请的key&amp;num=10</a></p>
+<p>​            （4）.娱乐新闻                    <a href="http://api.tianapi.com/huabian/?key=自己申请的key&amp;num=50" target="_blank" rel="noopener">http://api.tianapi.com/huabian/?key=自己申请的key&amp;num=50</a>         </p>
+<p>​            （5）.脑筋急转弯                <a href="http://api.tianapi.com/txapi/naowan/?key=自己申请的key&amp;num=10" target="_blank" rel="noopener">http://api.tianapi.com/txapi/naowan/?key=自己申请的key&amp;num=10</a></p>
+<p>​            （6）.古诗文                        <a href="http://api.tianapi.com/txapi/poetry/?key=自己申请的key&amp;num=10" target="_blank" rel="noopener">http://api.tianapi.com/txapi/poetry/?key=自己申请的key&amp;num=10</a></p>
+<h2 id="以下数据由咕咕数据提供"><a href="#以下数据由咕咕数据提供" class="headerlink" title="以下数据由咕咕数据提供"></a>以下数据由咕咕数据提供</h2><p>​            （1）.笑话段子                    <a href="https://api.gugudata.com/news/joke/demo" target="_blank" rel="noopener">https://api.gugudata.com/news/joke/demo</a></p>
+<h2 id="以下数据由阿里巴巴提供-需要配合申请时提供的AppCode-AppSecretj进行使用"><a href="#以下数据由阿里巴巴提供-需要配合申请时提供的AppCode-AppSecretj进行使用" class="headerlink" title="以下数据由阿里巴巴提供(需要配合申请时提供的AppCode/AppSecretj进行使用)"></a>以下数据由阿里巴巴提供(需要配合申请时提供的AppCode/AppSecretj进行使用)</h2><p>​            ajax使用案例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">		url: <span class="string">"http://toutiao-ali.juheapi.com/toutiao/index?type=junshi"</span>,</span><br><span class="line">		headers:&#123;<span class="string">"Authorization"</span>:<span class="string">"APPCODE 自己申请的AppCode/AppSecretj"</span>&#125;,</span><br><span class="line">		beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//请求前的处理</span></span><br><span class="line">		&#125;,</span><br><span class="line">		success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(data)</span><br><span class="line">		<span class="comment">//请求成功时处理</span></span><br><span class="line">		&#125;,</span><br><span class="line">		complete:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//请求完成的处理</span></span><br><span class="line">		&#125;,</span><br><span class="line">		error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//请求出错处理</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>​            阿里巴巴接口</p>
+<p>​                    （1）.头条新闻                        <a href="http://toutiao-ali.juheapi.com/toutiao/index?type=junshi（类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)）" target="_blank" rel="noopener">http://toutiao-ali.juheapi.com/toutiao/index?type=junshi（类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)）</a></p>
+<p>​                    （2）.段子                                <a href="http://ali-joke.showapi.com/textJoke?maxResult=20&amp;page=1&amp;time=2019-07-01" target="_blank" rel="noopener">http://ali-joke.showapi.com/textJoke?maxResult=20&amp;page=1&amp;time=2019-07-01</a></p>
+<p>​                    （3）.笑话大全                        <a href="http://ali-joke.showapi.com/textJoke?maxResult=20&amp;page=1&amp;time=2016-07-01" target="_blank" rel="noopener">http://ali-joke.showapi.com/textJoke?maxResult=20&amp;page=1&amp;time=2016-07-01</a></p>
+<p>​                    （4）.段子动图视频                <a href="http://fundata.market.alicloudapi.com/fun/list?endDate=2017-12-06&amp;funType=text&amp;page=0&amp;q=%E7%AC%91%E8%AF%9D&amp;size=20&amp;sort=publishTime%2Cdesc&amp;startDate=2017-10-05" target="_blank" rel="noopener">http://fundata.market.alicloudapi.com/fun/list?endDate=2017-12-06&amp;funType=text&amp;page=0&amp;q=%E7%AC%91%E8%AF%9D&amp;size=20&amp;sort=publishTime%2Cdesc&amp;startDate=2017-10-05</a></p>
+<h2 id="以下由一名博主提供的小说类API"><a href="#以下由一名博主提供的小说类API" class="headerlink" title="以下由一名博主提供的小说类API"></a>以下由一名博主提供的小说类API</h2><p>​            原文链接：        <a href="https://www.52pojie.cn/thread-1015638-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-1015638-1-1.html</a></p>
+<p>​            （1）.根据名称搜索小说                                    <a href="http://lunbo.gdugm.cn/search/suggest?key=间客" target="_blank" rel="noopener">http://lunbo.gdugm.cn/search/suggest?key=间客</a></p>
+<p>​            （2）.根据小说得到的序号搜索到目录            <a href="http://lunbo.gdugm.cn/toc/mix?bookId=50874442abf1ced53c00002c" target="_blank" rel="noopener">http://lunbo.gdugm.cn/toc/mix?bookId=50874442abf1ced53c00002c</a></p>
+<p>​            （3）.根据小说目录得到的link得到相应文章内容        </p>
+<blockquote>
+<p><a href="http://chapter.xmxingheju.com/chapter/http%3A%2F%2Fbook.kdqb.cc%2FgetBooks.aspx%3Fmethod%3Dcontent%26bookId%3D22517%26chapterFile%3DU_22517_201904151010206041_1692_1.txt" target="_blank" rel="noopener">http://chapter.xmxingheju.com/chapter/http%3A%2F%2Fbook.kdqb.cc%2FgetBooks.aspx%3Fmethod%3Dcontent%26bookId%3D22517%26chapterFile%3DU_22517_201904151010206041_1692_1.txt</a></p>
+</blockquote>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">Related post</div>
+				<div>Comment</div>
+				<div>Share</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);" target="_blank" rel="noopener">To Top</a>
+		
+		
+			<a href="/2019/11/16/%E5%88%A9%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD/" title="利用第三方接口进行转发功能" rel="next">
+				Next post&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/16/%E5%88%A9%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD/" title="利用第三方接口进行转发功能">
+								利用第三方接口进行转发功能			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 16日, 2019				
+							</p>
+							<p class="relate-post-content">
+								利用第三方接口进行转发功能方法1：​            利用jqurey的share分享插件
+​            原文链接：http://www.jq22.com/jquery-info13612
+​            ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/16/%E5%88%A9%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD/" title="利用第三方接口进行转发功能">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="利用第三方接口进行转发功能"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran(' target="_blank" rel="noopener"s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran(' target="_blank" rel="noopener"t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" target="_blank" rel="noopener"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
