@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      跨域的一些问题： | Hexo
+      正则表达式 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			Current post&nbsp;:&nbsp;《跨域的一些问题：》
+			Current post&nbsp;:&nbsp;《正则表达式》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -265,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" itemprop="url">
-		跨域的一些问题：
+	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
+		正则表达式
 	</a>
 
 	</div>
@@ -279,9 +291,9 @@
 
 	Posted on
 
-	<a href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" itemprop="url">
-		<time datetime="2019-11-18T07:22:04.766Z" itemprop="datePublished">
-	  		2019-11-18
+	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
+		<time datetime="2019-11-25T09:37:57.081Z" itemprop="datePublished">
+	  		2019-11-25
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +309,9 @@
 
 	Updated on
 
-	<a href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" itemprop="url">
-		<time datetime="2019-11-18T07:22:04.766Z" itemprop="dateUpdated">
-	  		2019-11-16
+	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
+		<time datetime="2019-11-25T09:37:57.081Z" itemprop="dateUpdated">
+	  		2019-11-25
 	  </time>
 	</a> 
 
@@ -318,38 +330,28 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>跨域的一些问题：</p>
-<p>​    1.浏览器的同源政策</p>
-<p>​    2.ajax跨域</p>
-<p>​    3.jsonp跨域解决方案</p>
-<p>一、浏览器的同源政策</p>
-<p>​            同源是指：协议相同，域名相同，端口相同</p>
-<p>​            浏览器设置同源的目的：</p>
-<p>​                        一个页面设置的cookie,只能它的同源页面打开。外源页面想访问本源页面的数据则不能访问</p>
-<p>​                        这样是为了保证信息的安全，跨服务器数据无法交流</p>
-<p>​                        同源政策保证了只有在一个服务器上数据才能互相调用多个服务器之间不允许数据调用    </p>
-<p>​            例如：<a href="https://www.baidu.com这个网址" target="_blank" rel="noopener">https://www.baidu.com这个网址</a></p>
-<p>​                        协议是：https://</p>
-<p>​                        域名是：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-<p>​                        端口:***</p>
-<p>​            它的同源情况为：</p>
-<p>​                        <a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a>**                                        同源</p>
-<p>​                        <a href="https://google.cn" target="_blank" rel="noopener">https://google.cn</a>                                                        不同源（域名不同）</p>
-<p>​                        <a href="https://www.baidu.com:8080/" target="_blank" rel="noopener">https://www.baidu.com:8080/</a>***                            不同源（端口不同）</p>
-<p>二、ajax跨域</p>
-<p>​        描述：ajax跨域指的是将ajax请求进行跨域处理，不是在ajax中提供跨域方法。</p>
-<p>​        原因：同源政策明确规定ajax请求只能发给同源网址，否则就会产生跨域报错</p>
-<p>​        解决方法：利用最常见的jsonp方法，以及暂时不会使用的webSocket和cors</p>
-<p>​            </p>
-<p>三、jsonp就是服务器与客户端跨源通信的最常用方法</p>
-<p>​            描述：jsonp是服务器与客户端最常用的方法</p>
-<p>​                        最大特点是简单实用，老式浏览器也支持。</p>
-<p>​            本质：利用了script表情引入文件，并解析执行原理</p>
-<p>​            简单的跨域写法：</p>
-<p>​                    例如使用阿里的字体图标、vue在线引用、jq的在线引用、bookstrap的在线引用等等</p>
-<p>​        语法：</p>
-<p>​                （1）、在html中插入script标签，应script进行跨域请求</p>
-<p>​                （2）、在html页面中，显示出回调函数，当跨源请求完成后，对应回调函数会自动执行</p>
+		<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简介：正则表达式，又称规则表达式。简单来说正则表达式本身就是描述一种规则，就是用来对字符进行操作。</p>
+<p>例如：身份证，手机号，邮箱等有规律的字符都可以利用正则表达式去进行匹配</p>
+<p>ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等正规网站</p>
+<h4 id="首先了解一下js中针对字符操作的几个语句："><a href="#首先了解一下js中针对字符操作的几个语句：" class="headerlink" title="首先了解一下js中针对字符操作的几个语句："></a>首先了解一下js中针对字符操作的几个语句：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"sEf23s1ewgw324sr32de"</span>;</span><br><span class="line"><span class="comment">//		alert(str.search("wgw"))//返回字符串中对应字符的位置</span></span><br><span class="line"><span class="comment">//		alert(str.substring(2,5))//返回从第几个到第几个不包括结束位置</span></span><br><span class="line"><span class="comment">//		alert(str.charAt(3))//返回第几位的值</span></span><br><span class="line"><span class="comment">//		alert(str.match('w'))//match用于将所有匹配的数据放在一起</span></span><br><span class="line"><span class="comment">//		alert(str.replace('w','0'))//将匹配到的数据换成0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="接下来了解一下正则表达式的语法规则："><a href="#接下来了解一下正则表达式的语法规则：" class="headerlink" title="接下来了解一下正则表达式的语法规则："></a>接下来了解一下正则表达式的语法规则：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re;</span><br><span class="line">re=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);<span class="comment">//js风格的正则表达式</span></span><br><span class="line">re=<span class="regexp">/e/i</span>;<span class="comment">//pre风格的正则表达式，双斜杠内代表要查找的内容,斜杠外的i表示不区分大小写</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种-语言"><a href="#这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种-语言" class="headerlink" title="这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种 语言"></a>这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种 语言</h4><h4 id="接下来了解一下正则表达式的元字符："><a href="#接下来了解一下正则表达式的元字符：" class="headerlink" title="接下来了解一下正则表达式的元字符："></a>接下来了解一下正则表达式的元字符：</h4><p>​            简介：顾名思义，元字符即为最小单位字符，是用于匹配的最小单位,即中括号内只能匹配一个字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//[]					元字符（可以是数字，字母，字符，转义字符等）			</span></span><br><span class="line"><span class="comment">//[abc]					匹配其中任意一个</span></span><br><span class="line"><span class="comment">//[a-z]					匹配一个范围</span></span><br><span class="line"><span class="comment">//[^a]					排除某个或者范围等等</span></span><br><span class="line"><span class="comment">//例：</span></span><br><span class="line"><span class="keyword">var</span> str=<span class="string">"0Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[0]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时会把第一位的0更改为s</span></span><br><span class="line">str=<span class="string">"3Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[0123]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时只要第一位任何一位与re相同就更改</span></span><br><span class="line">re=<span class="regexp">/[^0234]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时只要第一位与re不同就更改</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><p>​            简介：转义字符是指将某些字符组合当做有规律的字符进行操作，代码如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//		转义字符:		 代表含义					  代表范围</span></span><br><span class="line"><span class="comment">//		.				任意字符</span></span><br><span class="line"><span class="comment">//		\d				任意数字					 [0-9]</span></span><br><span class="line"><span class="comment">//		\D				任意非数字					[^0-9]</span></span><br><span class="line"><span class="comment">//		\w				任意英文数组下划线			 [a-z0-9_]</span></span><br><span class="line"><span class="comment">//		\W				任意非英文数组下划线			[^a-z0-9_]</span></span><br><span class="line"><span class="comment">//		\s				空白字符空格tab等等</span></span><br><span class="line"><span class="comment">//		\S				非空白字符</span></span><br><span class="line"><span class="comment">//例</span></span><br><span class="line"><span class="keyword">var</span> str=<span class="string">"0Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[.]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里无论第一位是什么都会被转换成s</span></span><br><span class="line">re=<span class="regexp">/[\d]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里只要第一位是数字就会被转换成s</span></span><br><span class="line">re=<span class="regexp">/[\w]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里只要第一位是英文字符就会转换成s</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="特殊字符："><a href="#特殊字符：" class="headerlink" title="特殊字符："></a>特殊字符：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//		*				匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 \*。</span></span><br><span class="line"><span class="comment">//		+				匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 \+。</span></span><br><span class="line"><span class="comment">//		?				匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请						 使用 \?。</span></span><br><span class="line"><span class="comment">//		\				将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例						如， 'n' 匹配字符 'n'。'\n' 匹配换行符。序列 '\\' 匹配 "\"，而 '\(' 						 则匹配 "("。</span></span><br><span class="line"><span class="comment">//		^				匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字						符集合。要匹配 ^ 字符本身，请使用 \^。</span></span><br><span class="line"><span class="comment">//		|				指明两项之间的一个选择。要匹配 |，请使用 \|。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="小案例："><a href="#小案例：" class="headerlink" title="小案例："></a>小案例：</h4><p>​            内容：利用正则表达式进行去除html代码中的标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>去掉文本标签<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"td1"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"but1"</span>&gt;</span>过滤<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"td2"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    /*</span><br><span class="line">	 * 案例：去掉标签</span><br><span class="line">	 */ 	</span><br><span class="line"><span class="javascript">	<span class="built_in">document</span>.getElementById(<span class="string">"but1"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> tr1=<span class="built_in">document</span>.getElementById(<span class="string">"td1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> tr2=<span class="built_in">document</span>.getElementById(<span class="string">"td2"</span>);</span></span><br><span class="line"><span class="handlebars"><span class="xml">		//因为标签中不可以出现“<span class="tag">&lt;&gt;</span>”,所有就除了"<span class="tag">&lt;&gt;</span>"意外的任意字符匹配，g代表所有,i代表不区分大小写</span></span></span><br><span class="line"><span class="actionscript">		<span class="comment">//'+'匹配前面的子表达式一次或多次。例如，'zo+' 能匹配 "zo" 以及 "zoo"，但不能匹配 "z"</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> re=<span class="regexp">/&lt;[^&lt;&gt;]+&gt;/ig</span>;</span></span><br><span class="line"><span class="actionscript">		tr2.value=tr1.value.replace(re,<span class="string">""</span>);<span class="comment">//将匹配到的数据换成空</span></span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>将敏感字替换<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"te1"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"but"</span>&gt;</span>过滤<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"te2"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    /*</span><br><span class="line">	 *案例：敏感词过滤 </span><br><span class="line">	 */</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"but"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> te1=<span class="built_in">document</span>.getElementById(<span class="string">"te1"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> te2=<span class="built_in">document</span>.getElementById(<span class="string">"te2"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> re=<span class="regexp">/牛逼|sb|nb/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span></span><br><span class="line"><span class="actionscript">        te2.value=te1.value.replace(re,<span class="string">"*"</span>);<span class="comment">//将匹配到的数据换成*</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 	
 	</div>
 	
@@ -368,12 +370,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);" target="_blank" rel="noopener">To Top</a>
 		
-			<a href="/2019/11/21/%E8%BF%9B%E5%BA%A6%E6%9D%A1/" title="进度条" rel="prev">
-				&laquo;Pre post
-			</a>
 		
-		
-			<a href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" title="为大家提供一些免费的API" rel="next">
+			<a href="/2019/11/24/%E8%BF%9B%E5%BA%A6%E6%9D%A1%E4%B8%8E%E6%AD%8C%E8%AF%8D%E5%90%8C%E6%AD%A5/" title="进度条与歌词同步" rel="next">
 				Next post&raquo;
 			</a>
 			
@@ -391,31 +389,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
-								正则表达式			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 25日, 2019				
-							</p>
-							<p class="relate-post-content">
-								正则表达式简介：正则表达式，又称规则表达式。简单来说正则表达式本身就是描述一种规则，就是用来对字符进行操作。
-例如：身份证，手机号，邮箱等有规律的字符都可以利用正则表达式去进行匹配
-ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="正则表达式"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -511,6 +484,35 @@ ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等...
 							<a href="/2019/11/21/%E8%BF%9B%E5%BA%A6%E6%9D%A1/" title="进度条">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="进度条"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" title="跨域的一些问题：">
+								跨域的一些问题：			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 18日, 2019				
+							</p>
+							<p class="relate-post-content">
+								跨域的一些问题：
+​    1.浏览器的同源政策
+​    2.ajax跨域
+​    3.jsonp跨域解决方案
+一、浏览器的同源政策
+​            同源是指：协议相同，域名相同，端口相同
+​            浏览...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" title="跨域的一些问题：">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="跨域的一些问题："/>
 							</a>
 						</div>
 					</li>											
