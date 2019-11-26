@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      正则表达式 | Hexo
+      二级菜单多级联动 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			Current post&nbsp;:&nbsp;《正则表达式》
+			Current post&nbsp;:&nbsp;《二级菜单多级联动》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
-		正则表达式
+	<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" itemprop="url">
+		二级菜单多级联动
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	Posted on
 
-	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
-		<time datetime="2019-11-25T09:37:57.081Z" itemprop="datePublished">
-	  		2019-11-25
+	<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" itemprop="url">
+		<time datetime="2019-11-26T03:11:39.002Z" itemprop="datePublished">
+	  		2019-11-26
 	  </time>
 	</a>
 	&nbsp;
@@ -309,8 +309,8 @@
 
 	Updated on
 
-	<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
-		<time datetime="2019-11-25T09:37:57.081Z" itemprop="dateUpdated">
+	<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" itemprop="url">
+		<time datetime="2019-11-26T03:11:39.002Z" itemprop="dateUpdated">
 	  		2019-11-25
 	  </time>
 	</a> 
@@ -330,27 +330,13 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>简介：正则表达式，又称规则表达式。简单来说正则表达式本身就是描述一种规则，就是用来对字符进行操作。</p>
-<p>例如：身份证，手机号，邮箱等有规律的字符都可以利用正则表达式去进行匹配</p>
-<p>ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等正规网站</p>
-<h4 id="首先了解一下js中针对字符操作的几个语句："><a href="#首先了解一下js中针对字符操作的几个语句：" class="headerlink" title="首先了解一下js中针对字符操作的几个语句："></a>首先了解一下js中针对字符操作的几个语句：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"sEf23s1ewgw324sr32de"</span>;</span><br><span class="line"><span class="comment">//		alert(str.search("wgw"))//返回字符串中对应字符的位置</span></span><br><span class="line"><span class="comment">//		alert(str.substring(2,5))//返回从第几个到第几个不包括结束位置</span></span><br><span class="line"><span class="comment">//		alert(str.charAt(3))//返回第几位的值</span></span><br><span class="line"><span class="comment">//		alert(str.match('w'))//match用于将所有匹配的数据放在一起</span></span><br><span class="line"><span class="comment">//		alert(str.replace('w','0'))//将匹配到的数据换成0</span></span><br></pre></td></tr></table></figure>
+		<h1 id="二级菜单多级联动"><a href="#二级菜单多级联动" class="headerlink" title="二级菜单多级联动"></a>二级菜单多级联动</h1><p>ps:看完之后仍然不懂请联系：qq:2090608207,备注进度条，相关解析在线帮你解决</p>
+<h2 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h2><p>​        联动菜单无非是，子菜单根据父菜单的选项进行变更，这样便可以利用js去判断父级菜单选中进行子级菜单动态变更</p>
+<h3 id="一、下面是基本的各级菜单的数据"><a href="#一、下面是基本的各级菜单的数据" class="headerlink" title="一、下面是基本的各级菜单的数据"></a>一、下面是基本的各级菜单的数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//省级选项--一级：一个省对应一个市的数组</span></span><br><span class="line"><span class="keyword">var</span> province_array=[<span class="string">"河南省"</span>,<span class="string">"湖南省"</span>,<span class="string">"山东省"</span>];</span><br><span class="line"><span class="comment">//市级选项--二级：一个市对应一个区的数组</span></span><br><span class="line"><span class="keyword">var</span> city_array=[</span><br><span class="line">    [<span class="string">"郑州市"</span>,<span class="string">"洛阳市"</span>,<span class="string">"南阳市"</span>],</span><br><span class="line">    [<span class="string">"长沙市"</span>,<span class="string">"岳阳市"</span>,<span class="string">"邵阳市"</span>],</span><br><span class="line">    [<span class="string">"济南市"</span>,<span class="string">"青岛市"</span>,<span class="string">"烟台市"</span>]</span><br><span class="line">];</span><br><span class="line"><span class="comment">//县级选项--三级：区可以随意添加更改</span></span><br><span class="line"><span class="keyword">var</span> area_array=[<span class="comment">//按市的顺序进行排列的</span></span><br><span class="line">    [<span class="string">"二七区"</span>,<span class="string">"金水区"</span>,<span class="string">"上街区"</span>,<span class="string">"中原区"</span>,<span class="string">"回族管城区"</span>,<span class="string">"惠济区"</span>],</span><br><span class="line">    [<span class="string">"瀍河区"</span>,<span class="string">"老城区"</span>,<span class="string">"西工区"</span>,<span class="string">"涧西区"</span>,<span class="string">"洛龙区"</span>,<span class="string">"吉利区"</span>,<span class="string">"伊滨区"</span>],</span><br><span class="line">    [<span class="string">"宛城区"</span>,<span class="string">"卧龙区"</span>,<span class="string">"高新区"</span>],</span><br><span class="line">    [<span class="string">"长沙市区"</span>,<span class="string">"芙蓉区"</span>,<span class="string">"天心区"</span>,<span class="string">"岳麓区"</span>,<span class="string">"开福区"</span>,<span class="string">"雨花区"</span>,<span class="string">"望城区"</span>],</span><br><span class="line">    [<span class="string">"岳阳楼区"</span>,<span class="string">"云溪区"</span>,<span class="string">"君山区"</span>],</span><br><span class="line">    [<span class="string">"双清区"</span>,<span class="string">"大祥区"</span>,<span class="string">"北塔区"</span>],</span><br><span class="line">    [<span class="string">"历下区"</span>,<span class="string">"市中区"</span>,<span class="string">"槐荫区"</span>,<span class="string">"天桥区"</span>,<span class="string">"历城区"</span>,<span class="string">"长清区"</span>],</span><br><span class="line">    [<span class="string">"市南区"</span>,<span class="string">"市北区"</span>,<span class="string">"黄岛区"</span>,<span class="string">"崂山区"</span>,<span class="string">"李沧区"</span>,<span class="string">"城阳区"</span>,<span class="string">"即墨区"</span>],</span><br><span class="line">    [<span class="string">"芝罘区"</span>,<span class="string">"莱山区"</span>,<span class="string">"牟平区"</span>,<span class="string">"福山区"</span>]</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 
-<h4 id="接下来了解一下正则表达式的语法规则："><a href="#接下来了解一下正则表达式的语法规则：" class="headerlink" title="接下来了解一下正则表达式的语法规则："></a>接下来了解一下正则表达式的语法规则：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re;</span><br><span class="line">re=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);<span class="comment">//js风格的正则表达式</span></span><br><span class="line">re=<span class="regexp">/e/i</span>;<span class="comment">//pre风格的正则表达式，双斜杠内代表要查找的内容,斜杠外的i表示不区分大小写</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、下面为菜单初始化"><a href="#二、下面为菜单初始化" class="headerlink" title="二、下面为菜单初始化"></a>二、下面为菜单初始化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;select id=<span class="string">"province"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">	&lt;select id="city"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>select&gt;</span><br><span class="line">	&lt;select id=<span class="string">"district"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;	</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">   		<span class="comment">//省的默认选项</span></span><br><span class="line">        <span class="keyword">var</span> province=$(<span class="string">"#province"</span>)</span><br><span class="line">        change_arga(province_array,province)</span><br><span class="line">        <span class="comment">//市的默认选项</span></span><br><span class="line">        <span class="keyword">var</span> city=$(<span class="string">"#city"</span>)</span><br><span class="line">        change_arga(city_array[<span class="number">0</span>],city)</span><br><span class="line">        <span class="comment">//区的默认选项</span></span><br><span class="line">        <span class="keyword">var</span> district=$(<span class="string">"#district"</span>)</span><br><span class="line">        change_arga(area_array[<span class="number">0</span>],district) </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种-语言"><a href="#这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种-语言" class="headerlink" title="这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种 语言"></a>这里以pre风格进行相关解说，原因是pre风格使用相对简便且适用于多种 语言</h4><h4 id="接下来了解一下正则表达式的元字符："><a href="#接下来了解一下正则表达式的元字符：" class="headerlink" title="接下来了解一下正则表达式的元字符："></a>接下来了解一下正则表达式的元字符：</h4><p>​            简介：顾名思义，元字符即为最小单位字符，是用于匹配的最小单位,即中括号内只能匹配一个字符</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//[]					元字符（可以是数字，字母，字符，转义字符等）			</span></span><br><span class="line"><span class="comment">//[abc]					匹配其中任意一个</span></span><br><span class="line"><span class="comment">//[a-z]					匹配一个范围</span></span><br><span class="line"><span class="comment">//[^a]					排除某个或者范围等等</span></span><br><span class="line"><span class="comment">//例：</span></span><br><span class="line"><span class="keyword">var</span> str=<span class="string">"0Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[0]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时会把第一位的0更改为s</span></span><br><span class="line">str=<span class="string">"3Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[0123]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时只要第一位任何一位与re相同就更改</span></span><br><span class="line">re=<span class="regexp">/[^0234]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里输出时只要第一位与re不同就更改</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><p>​            简介：转义字符是指将某些字符组合当做有规律的字符进行操作，代码如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//		转义字符:		 代表含义					  代表范围</span></span><br><span class="line"><span class="comment">//		.				任意字符</span></span><br><span class="line"><span class="comment">//		\d				任意数字					 [0-9]</span></span><br><span class="line"><span class="comment">//		\D				任意非数字					[^0-9]</span></span><br><span class="line"><span class="comment">//		\w				任意英文数组下划线			 [a-z0-9_]</span></span><br><span class="line"><span class="comment">//		\W				任意非英文数组下划线			[^a-z0-9_]</span></span><br><span class="line"><span class="comment">//		\s				空白字符空格tab等等</span></span><br><span class="line"><span class="comment">//		\S				非空白字符</span></span><br><span class="line"><span class="comment">//例</span></span><br><span class="line"><span class="keyword">var</span> str=<span class="string">"0Ef23s1ewgw324sr32de"</span>;</span><br><span class="line">re=<span class="regexp">/[.]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里无论第一位是什么都会被转换成s</span></span><br><span class="line">re=<span class="regexp">/[\d]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里只要第一位是数字就会被转换成s</span></span><br><span class="line">re=<span class="regexp">/[\w]/</span>;</span><br><span class="line">alert(str.replace(re,<span class="string">'s'</span>))<span class="comment">//这里只要第一位是英文字符就会转换成s</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="特殊字符："><a href="#特殊字符：" class="headerlink" title="特殊字符："></a>特殊字符：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//		*				匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 \*。</span></span><br><span class="line"><span class="comment">//		+				匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 \+。</span></span><br><span class="line"><span class="comment">//		?				匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请						 使用 \?。</span></span><br><span class="line"><span class="comment">//		\				将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例						如， 'n' 匹配字符 'n'。'\n' 匹配换行符。序列 '\\' 匹配 "\"，而 '\(' 						 则匹配 "("。</span></span><br><span class="line"><span class="comment">//		^				匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字						符集合。要匹配 ^ 字符本身，请使用 \^。</span></span><br><span class="line"><span class="comment">//		|				指明两项之间的一个选择。要匹配 |，请使用 \|。</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="小案例："><a href="#小案例：" class="headerlink" title="小案例："></a>小案例：</h4><p>​            内容：利用正则表达式进行去除html代码中的标签</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>去掉文本标签<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"td1"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"but1"</span>&gt;</span>过滤<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"td2"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    /*</span><br><span class="line">	 * 案例：去掉标签</span><br><span class="line">	 */ 	</span><br><span class="line"><span class="javascript">	<span class="built_in">document</span>.getElementById(<span class="string">"but1"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> tr1=<span class="built_in">document</span>.getElementById(<span class="string">"td1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> tr2=<span class="built_in">document</span>.getElementById(<span class="string">"td2"</span>);</span></span><br><span class="line"><span class="handlebars"><span class="xml">		//因为标签中不可以出现“<span class="tag">&lt;&gt;</span>”,所有就除了"<span class="tag">&lt;&gt;</span>"意外的任意字符匹配，g代表所有,i代表不区分大小写</span></span></span><br><span class="line"><span class="actionscript">		<span class="comment">//'+'匹配前面的子表达式一次或多次。例如，'zo+' 能匹配 "zo" 以及 "zoo"，但不能匹配 "z"</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> re=<span class="regexp">/&lt;[^&lt;&gt;]+&gt;/ig</span>;</span></span><br><span class="line"><span class="actionscript">		tr2.value=tr1.value.replace(re,<span class="string">""</span>);<span class="comment">//将匹配到的数据换成空</span></span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>将敏感字替换<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"te1"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"but"</span>&gt;</span>过滤<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"te2"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    /*</span><br><span class="line">	 *案例：敏感词过滤 </span><br><span class="line">	 */</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"but"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> te1=<span class="built_in">document</span>.getElementById(<span class="string">"te1"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> te2=<span class="built_in">document</span>.getElementById(<span class="string">"te2"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> re=<span class="regexp">/牛逼|sb|nb/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span></span><br><span class="line"><span class="actionscript">        te2.value=te1.value.replace(re,<span class="string">"*"</span>);<span class="comment">//将匹配到的数据换成*</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="三、各级菜单点击事件"><a href="#三、各级菜单点击事件" class="headerlink" title="三、各级菜单点击事件"></a>三、各级菜单点击事件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击时改变市区</span></span><br><span class="line">$(<span class="string">"#province"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> province=$(<span class="string">"#province option:selected"</span>).val();<span class="comment">//获取选中的option的值</span></span><br><span class="line">	<span class="keyword">var</span> change_city=$(<span class="string">"#city"</span>);<span class="comment">//存储市的节点传值使用</span></span><br><span class="line">	change_city.find(<span class="string">"option"</span>).remove();<span class="comment">//删除市内的所有数据</span></span><br><span class="line">	province=<span class="built_in">parseInt</span>(province);<span class="comment">//强转int型</span></span><br><span class="line">	change_arga(city_array[province],change_city)<span class="comment">//更改市内数据</span></span><br><span class="line">	</span><br><span class="line">	change_district();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#city"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	change_district();</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change_district</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//与上面思路相同</span></span><br><span class="line">	<span class="keyword">var</span> city=$(<span class="string">"#city option:selected"</span>).html();<span class="comment">//获取选中的option的值</span></span><br><span class="line">	<span class="keyword">var</span> change_district=$(<span class="string">"#district"</span>);</span><br><span class="line">	$(<span class="string">"#district"</span>).find(<span class="string">"option"</span>).remove();</span><br><span class="line">	<span class="keyword">var</span> c=<span class="number">0</span>;<span class="comment">//因为区的一维是按市的顺序排的所以需要c来记录区的一维</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;city_array.length;i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;city_array[i].length;j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (city_array[i][j]==city) &#123;</span><br><span class="line">				change_arga(area_array[c],change_district)</span><br><span class="line">			&#125;</span><br><span class="line">			c++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change_arga</span>(<span class="params">arga_arry,id</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> c=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arga_arry.length;i++,c++)&#123;</span><br><span class="line">		<span class="keyword">var</span> options=$(<span class="string">"&lt;option&gt;河北省&lt;/option&gt;"</span>)</span><br><span class="line">		id.append(options);</span><br><span class="line">		id.find(<span class="string">"option:last"</span>).val(c)</span><br><span class="line">		id.find(<span class="string">"option:last"</span>).html(arga_arry[c])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 	
 	</div>
@@ -370,12 +356,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);" target="_blank" rel="noopener">To Top</a>
 		
-			<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" title="利用接口完成图灵测试（qq样式界面）" rel="prev">
-				&laquo;Pre post
-			</a>
 		
-		
-			<a href="/2019/11/24/%E8%BF%9B%E5%BA%A6%E6%9D%A1%E4%B8%8E%E6%AD%8C%E8%AF%8D%E5%90%8C%E6%AD%A5/" title="进度条与歌词同步" rel="next">
+			<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" title="利用接口完成图灵测试（qq样式界面）" rel="next">
 				Next post&raquo;
 			</a>
 			
@@ -396,30 +378,6 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" title="二级菜单多级联动">
-								二级菜单多级联动			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 26日, 2019				
-							</p>
-							<p class="relate-post-content">
-								二级菜单多级联动ps:看完之后仍然不懂请联系：qq:2090608207,备注进度条，相关解析在线帮你解决
-思路整理​        联动菜单无非是，子菜单根据父菜单的选项进行变更，这样便可以利用js去判断父级菜单选中进行子级菜单动态...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" title="二级菜单多级联动">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="二级菜单多级联动"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" title="利用接口完成图灵测试（qq样式界面）">
 								利用接口完成图灵测试（qq样式界面）			
 							</a>
@@ -437,6 +395,31 @@
 							<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" title="利用接口完成图灵测试（qq样式界面）">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="利用接口完成图灵测试（qq样式界面）"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+								正则表达式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 25日, 2019				
+							</p>
+							<p class="relate-post-content">
+								正则表达式简介：正则表达式，又称规则表达式。简单来说正则表达式本身就是描述一种规则，就是用来对字符进行操作。
+例如：身份证，手机号，邮箱等有规律的字符都可以利用正则表达式去进行匹配
+ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="正则表达式"/>
 							</a>
 						</div>
 					</li>											

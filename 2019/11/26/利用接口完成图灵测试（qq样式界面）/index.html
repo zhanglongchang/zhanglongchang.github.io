@@ -1,0 +1,942 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      利用接口完成图灵测试（qq样式界面） | Hexo
+    
+  </title>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" target="_blank" rel="noopener" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" target="_blank" id="time_is_link" rel="nofollow noopener" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Current post&nbsp;:&nbsp;《利用接口完成图灵测试（qq样式界面）》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" target="_blank" rel="noopener" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" itemprop="url">
+		利用接口完成图灵测试（qq样式界面）
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	Posted on
+
+	<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" itemprop="url">
+		<time datetime="2019-11-26T03:11:26.913Z" itemprop="datePublished">
+	  		2019-11-26
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	Updated on
+
+	<a href="/2019/11/26/%E5%88%A9%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%AE%8C%E6%88%90%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95%EF%BC%88qq%E6%A0%B7%E5%BC%8F%E7%95%8C%E9%9D%A2%EF%BC%89/" itemprop="url">
+		<time datetime="2019-11-26T03:11:26.913Z" itemprop="dateUpdated">
+	  		2019-11-25
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1 id="利用接口完成图灵测试（qq样式界面）"><a href="#利用接口完成图灵测试（qq样式界面）" class="headerlink" title="利用接口完成图灵测试（qq样式界面）"></a>利用接口完成图灵测试（qq样式界面）</h1><p>ps:看完之后仍然不懂请联系：qq:2090608207,备注图灵，相关解析在线帮你解决</p>
+<h4 id="本测试需要用到的API"><a href="#本测试需要用到的API" class="headerlink" title="本测试需要用到的API:"></a>本测试需要用到的API:</h4><p>​            天行数据的图灵api:<a href="http://api.tianapi.com/txapi/robot/index?key=cf2678b18d893f8099bb59fcc5c5456a&amp;question=你好" target="_blank" rel="noopener">http://api.tianapi.com/txapi/robot/index?key=cf2678b18d893f8099bb59fcc5c5456a&amp;question=你好</a></p>
+<p>​            //语音转换需要用encodeURI()进行砖混</p>
+<p>​            免费文字转语音api:<a href="http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;text=encodeURI(str)" target="_blank" rel="noopener">http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;text=encodeURI(str)</a></p>
+<h3 id="整理思路："><a href="#整理思路：" class="headerlink" title="整理思路："></a>整理思路：</h3><p>​            既然有图灵链接，就可以利用ajax请求数据，请求的数据为输入框输入的</p>
+<p>​            可以利用vue中的双向数据绑定获取数据</p>
+<p>​            利用键盘事件完成数据发送</p>
+<h3 id="直接上代码："><a href="#直接上代码：" class="headerlink" title="直接上代码："></a>直接上代码：</h3><p>​            </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		body&#123;</span><br><span class="line">			z-index: 0;</span><br><span class="line">			background: aliceblue;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#Ai</span>&#123;</span></span><br><span class="line">			background: white;</span><br><span class="line">			margin-top: 20px;</span><br><span class="line">			padding: 0px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#Ai</span> <span class="selector-class">.input-group</span>&#123;</span></span><br><span class="line">			margin-top: 20px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#Ai</span> <span class="selector-class">.radius</span>&#123;</span></span><br><span class="line">			width: 100%;</span><br><span class="line">			font-weight: 549;</span><br><span class="line">			padding-left: 25px;</span><br><span class="line"><span class="css">			<span class="comment">/*font-family:"华文琥珀";*/</span></span></span><br><span class="line">			line-height: 61px;</span><br><span class="line">			font-size: 25px;</span><br><span class="line">			color: rgb(106,178,193);</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#Ai</span> <span class="selector-class">.input-group</span> <span class="selector-tag">textarea</span>&#123;</span></span><br><span class="line">			outline: none;</span><br><span class="line"><span class="css">			<span class="selector-tag">resize</span><span class="selector-pseudo">:none</span>;</span></span><br><span class="line">			width: 100%;</span><br><span class="line"><span class="css">			<span class="selector-tag">box-shadow</span><span class="selector-pseudo">:none</span>;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">			border: 0px solid gainsboro;	</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#Ai</span> <span class="selector-class">.input-group</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line">			text-align: center;</span><br><span class="line">			color: white;</span><br><span class="line">			width: 150px;</span><br><span class="line">			float: right;	</span><br><span class="line">			font-size: 15px;</span><br><span class="line">			font-weight: 600;</span><br><span class="line">			line-height: 50px;</span><br><span class="line">			border-radius: 10px;</span><br><span class="line">			z-index: 3;</span><br><span class="line">			background: rgb(167,143,242);</span><br><span class="line">			display: block;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogue</span>&#123;</span></span><br><span class="line">			height: 600px;</span><br><span class="line">			background: rgb(230,238,245);</span><br><span class="line">			overflow: hidden;</span><br><span class="line">			overflow: auto;</span><br><span class="line"><span class="css">			<span class="comment">/*overflow-y: scroll;*/</span></span></span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="comment">/* 定义滚动条样式 */</span></span></span><br><span class="line"><span class="css">		<span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span></span><br><span class="line">		  width: 6px;</span><br><span class="line">		  height: 6px;</span><br><span class="line">		  background-color: rgba(255,255,255, 0);</span><br><span class="line">		&#125;</span><br><span class="line">		  </span><br><span class="line"><span class="css">		<span class="comment">/*定义滚动条轨道 内阴影+圆角*/</span></span></span><br><span class="line"><span class="css">		<span class="selector-pseudo">::-webkit-scrollbar-track</span> &#123;</span></span><br><span class="line"><span class="css">		  <span class="selector-tag">box-shadow</span>: <span class="selector-tag">inset</span> 0 0 0<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(240, 240, 240, 0<span class="selector-class">.5</span>);</span></span><br><span class="line">		  border-radius: 10px;</span><br><span class="line"><span class="css">		  <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(240, 240, 240, 0<span class="selector-class">.5</span>);</span></span><br><span class="line">		&#125;</span><br><span class="line">		  </span><br><span class="line"><span class="css">		<span class="comment">/*定义滑块 内阴影+圆角*/</span></span></span><br><span class="line"><span class="css">		<span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</span></span><br><span class="line">		  border-radius: 10px;</span><br><span class="line"><span class="css">		  <span class="selector-tag">box-shadow</span>: <span class="selector-tag">inset</span> 0 0 0<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(220, 220, 220, 0<span class="selector-class">.5</span>);</span></span><br><span class="line"><span class="css">		  <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(220, 220, 220, 0<span class="selector-class">.5</span>);</span></span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogBox</span>&#123;</span></span><br><span class="line">			width: 100%;	</span><br><span class="line">			padding-top: 15px;</span><br><span class="line">			padding-bottom: 15px;</span><br><span class="line">			padding-left: 25px;</span><br><span class="line">			overflow: hidden;</span><br><span class="line"><span class="css">			<span class="comment">/*border: 1px solid black;*/</span></span></span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogBox</span> <span class="selector-class">.robotImg</span>&#123;	</span></span><br><span class="line">			border-radius: 50%;</span><br><span class="line">			width: 60px;</span><br><span class="line">			height: 60px;</span><br><span class="line">			padding: 5px;</span><br><span class="line">			float: left;</span><br><span class="line">			border: 2px solid gainsboro;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogBox</span> <span class="selector-class">.dialogueLeft</span>&#123;</span></span><br><span class="line">			position: relative;</span><br><span class="line">			width: 300px;</span><br><span class="line">			float: left;</span><br><span class="line">			z-index: 0;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogBox</span> <span class="selector-class">.dialogueLeft</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line">			position: relative;</span><br><span class="line">			display: block;</span><br><span class="line">			width: 250px;</span><br><span class="line">			color: white;</span><br><span class="line">			margin-left: 5px;</span><br><span class="line">			border: 2px solid rgb(187,183,282);</span><br><span class="line">			border-bottom: 5px solid rgb(187,183,282);</span><br><span class="line">			border-radius: 20px;</span><br><span class="line">			padding: 20px;</span><br><span class="line">			line-height: 17px;</span><br><span class="line">			background: rgb(167,143,242);</span><br><span class="line">			z-index: 3;</span><br><span class="line">			overflow: hidden;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#dialogBox</span> <span class="selector-tag">span</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line">			width: 190px;</span><br><span class="line">			float: right;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#head</span>&#123;</span></span><br><span class="line">			width: 100%;</span><br><span class="line">			padding-top: 15px;</span><br><span class="line">			padding-bottom: 15px;</span><br><span class="line">			padding-right: 25px;</span><br><span class="line"><span class="css">			<span class="comment">/*border: 1px solid black;*/</span></span></span><br><span class="line">			overflow: hidden;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#head</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line">			border-radius: 50%;</span><br><span class="line">			width: 60px;</span><br><span class="line">			height: 60px;</span><br><span class="line">			padding: 5px;</span><br><span class="line">			float: right;</span><br><span class="line">			border: 2px solid gainsboro;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#head</span> <span class="selector-class">.dialogueLeft</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line">			display: block;</span><br><span class="line">			width: 250px;</span><br><span class="line">			color: white;</span><br><span class="line">			float: right;</span><br><span class="line">			margin-right: 5px;</span><br><span class="line">			border: 2px solid rgb(146,218,233);</span><br><span class="line">			border-bottom: 5px solid rgb(146,218,233);</span><br><span class="line">			border-radius: 20px;</span><br><span class="line">			padding: 20px;</span><br><span class="line">			background: rgb(126,198,213);</span><br><span class="line">			z-index: 3;</span><br><span class="line">		&#125; </span><br><span class="line"><span class="css">		<span class="selector-class">.dialogBox</span><span class="selector-pseudo">:first-child</span>&#123;</span></span><br><span class="line">			display: none;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		@<span class="keyword">media</span> only screen and (min-width: <span class="number">0px</span>) and (max-width: <span class="number">1100px</span>) &#123;</span></span><br><span class="line"><span class="css">			<span class="selector-id">#aiDetails</span>&#123;</span></span><br><span class="line">				display: none;</span><br><span class="line">			&#125;</span><br><span class="line"><span class="css">			<span class="selector-id">#Ai</span>&#123;</span></span><br><span class="line">				padding: 0px 7px;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--用于被复制使用--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dialogBox"</span> <span class="attr">class</span>=<span class="string">"dialogBox"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"robotImg"</span> <span class="attr">src</span>=<span class="string">"http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fimg.gq.com.cn%2Fuserfiles%2F201205%2F1335962627501_640X569.jpg&amp;thumburl=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2543125631%2C3993806481%26fm%3D26%26gp%3D0.jpg"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dialogueLeft"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"AiVoice"</span> <span class="attr">style</span>=<span class="string">"display: none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-play-circle"</span> <span class="attr">onclick</span>=<span class="string">"play()"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span> <span class="attr">onclick</span>=<span class="string">"displayText()"</span>&gt;</span>&amp;emsp;语音转文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-pause"</span> <span class="attr">style</span>=<span class="string">"display: none;"</span> <span class="attr">onclick</span>=<span class="string">"pause()"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span> <span class="attr">onclick</span>=<span class="string">"displayTexts()"</span>&gt;</span>&amp;emsp;语音转文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"dialogContent"</span> <span class="attr">style</span>=<span class="string">"display: none;"</span>&gt;</span></span><br><span class="line">					我是智能人小智，可以陪你聊天呦</span><br><span class="line">				<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"audio"</span> <span class="attr">:src</span>=<span class="string">"src"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"margin:0 auto;text-align: center;margin-top: 15px;color: rgb(151,151,151);"</span>&gt;</span>大家好，我是不可靠机器人，小智<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"Ai"</span> <span class="attr">class</span>=<span class="string">"col-md-6 col-md-offset-2"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"radius"</span>&gt;</span></span><br><span class="line">				有料智能语音助手</span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dialogue"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dialogBox"</span> <span class="attr">class</span>=<span class="string">"dialogBox"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"robotImg"</span> <span class="attr">src</span>=<span class="string">"http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fimg.gq.com.cn%2Fuserfiles%2F201205%2F1335962627501_640X569.jpg&amp;thumburl=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2543125631%2C3993806481%26fm%3D26%26gp%3D0.jpg"</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dialogueLeft"</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">span</span>&gt;</span>我是智能人小智，可以陪你聊天呦<span class="tag">&lt;/<span class="name">span</span>&gt;</span>	</span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"head"</span> <span class="attr">class</span>=<span class="string">"head"</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://image.baidu.com/search/down?tn=download&amp;word=download&amp;ie=utf8&amp;fr=detail&amp;url=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201704%2F27%2F20170427155254_Kctx8.thumb.700_0.jpeg&amp;thumburl=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D2280731892%2C2555333731%26fm%3D26%26gp%3D0.jpg"</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dialogueLeft"</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"headContent"</span>&gt;</span>说点什么吧<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"input-group col-xs-12"</span>&gt;</span></span><br><span class="line">				<span class="comment">&lt;!--&lt;input type="text" style="outline:none" id="request" v-model="speak"/&gt;--&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"request"</span> <span class="attr">v-model</span>=<span class="string">"speak"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">span</span> @<span class="attr">click</span>=<span class="string">"get()"</span>&gt;</span>发送<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">		<span class="keyword">var</span> vue=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">			el:<span class="string">"#Ai"</span>,</span><br><span class="line">			data:&#123;</span><br><span class="line">				speak:<span class="string">"你好"</span>,</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				<span class="keyword">get</span>:function()&#123;</span><br><span class="line"><span class="comment">//					vue.head=vue.speak</span></span><br><span class="line">					$.ajax(&#123;</span><br><span class="line">						url: <span class="string">"http://api.tianapi.com/txapi/robot/index?key=cf2678b18d893f8099bb59fcc5c5456a&amp;question="</span>+vue.speak,</span><br><span class="line">						beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">							<span class="comment">//请求前的处理</span></span><br><span class="line">							<span class="comment">//将说的话插入到dialogue最后，在将第一个向上移，</span></span><br><span class="line">							vue.insertDialogueBottom();</span><br><span class="line">						&#125;,</span><br><span class="line">						success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">							<span class="keyword">var</span> robotname=<span class="regexp">/&#123;robotname&#125;/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span><br><span class="line">							<span class="keyword">var</span> aiSpeak= data.newslist[<span class="number">0</span>].reply.replace(robotname,<span class="string">'小智'</span>)</span><br><span class="line">							<span class="keyword">var</span> appellation=<span class="regexp">/&#123;appellation&#125;/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span><br><span class="line">							aiSpeak= aiSpeak.replace(appellation,<span class="string">'你'</span>)</span><br><span class="line">							<span class="keyword">var</span> robotsex=<span class="regexp">/&#123;robotsex&#125;/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span><br><span class="line">							aiSpeak= aiSpeak.replace(robotsex,<span class="string">'女'</span>)</span><br><span class="line">							<span class="keyword">var</span> robotfather=<span class="regexp">/&#123;robotfather&#125;/ig</span>;<span class="comment">//正则中的'|'就是或的意思，g代表所有的匹配数据,i不区分大小写</span></span><br><span class="line">							aiSpeak= aiSpeak.replace(robotfather,<span class="string">'图灵'</span>)</span><br><span class="line">							<span class="keyword">var</span> robotfather=<span class="regexp">/&#123;robotmother&#125;/ig</span>;</span><br><span class="line">							aiSpeak= aiSpeak.replace(robotfather,<span class="string">'吴同茹'</span>)</span><br><span class="line"><span class="comment">//							vue.aiSpeak=aiSpeak;</span></span><br><span class="line">							</span><br><span class="line">							vue.speak=<span class="string">""</span>;</span><br><span class="line">							<span class="comment">//将机器人块插入到dialogue随后，</span></span><br><span class="line">							vue.dialogDialogueBottom(aiSpeak);</span><br><span class="line"><span class="comment">//							console.log(aiSpeak)</span></span><br><span class="line">						&#125;,</span><br><span class="line">						complete:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">							<span class="comment">//请求完成的处理</span></span><br><span class="line">						&#125;,</span><br><span class="line">						error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">						<span class="comment">//请求出错处理</span></span><br><span class="line">							alert(<span class="string">"请求出错"</span>)</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;,</span><br><span class="line">				insertDialogueBottom:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">					<span class="keyword">var</span> head=<span class="built_in">document</span>.getElementById(<span class="string">"head"</span>)</span><br><span class="line">					<span class="keyword">var</span> heads=head.cloneNode(<span class="literal">true</span>);</span><br><span class="line">					<span class="built_in">document</span>.getElementById(<span class="string">"dialogue"</span>).appendChild(heads)</span><br><span class="line">					$(<span class="string">".headContent:last"</span>).html(vue.speak)</span><br><span class="line">					<span class="comment">//将内容上移</span></span><br><span class="line">					vue.contentTopMove($(<span class="string">".head:last"</span>));</span><br><span class="line">				&#125;,</span><br><span class="line">				dialogDialogueBottom:<span class="function"><span class="keyword">function</span>(<span class="params">dialogContent</span>)</span>&#123;</span><br><span class="line">					<span class="keyword">var</span> dialog=<span class="built_in">document</span>.getElementById(<span class="string">"dialogBox"</span>)</span><br><span class="line">					<span class="keyword">var</span> dialogs=dialog.cloneNode(<span class="literal">true</span>);</span><br><span class="line">					<span class="built_in">document</span>.getElementById(<span class="string">"dialogue"</span>).appendChild(dialogs)</span><br><span class="line">					<span class="comment">//用于去除请求到的文本块中自带的标签</span></span><br><span class="line">					<span class="keyword">var</span> re=<span class="regexp">/&lt;[^&lt;&gt;]+&gt;/ig</span>;<span class="comment">//因为标签中不可以出现“&lt;&gt;”,所有就除了"&lt;&gt;"意外的任意字符匹配，g代表所有,i代表不区分大小写</span></span><br><span class="line">					dialogContent=dialogContent.replace(re,<span class="string">""</span>)</span><br><span class="line">					$(<span class="string">".dialogContent:last"</span>).html(dialogContent)</span><br><span class="line">					<span class="keyword">var</span> voice=<span class="string">"http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;text="</span> + <span class="built_in">encodeURI</span>(dialogContent);</span><br><span class="line">					$(<span class="string">".AiVoice:last"</span>).html(voice)</span><br><span class="line">					vue.contentTopMove($(<span class="string">".dialogBox:last"</span>));</span><br><span class="line">					<span class="comment">//有返回值默认播放最后一句</span></span><br><span class="line">					<span class="built_in">console</span>.log(dialogContent);</span><br><span class="line">					audios.src=voice;</span><br><span class="line">					setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">						<span class="built_in">document</span>.getElementById(<span class="string">"audio"</span>).play();</span><br><span class="line">					&#125;,<span class="number">100</span>)</span><br><span class="line">					$(<span class="string">".glyphicon-play-circle:last"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>)</span><br><span class="line">					$(<span class="string">".glyphicon-pause:last"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>)</span><br><span class="line">				&#125;,</span><br><span class="line">				contentTopMove:<span class="function"><span class="keyword">function</span>(<span class="params">last</span>)</span>&#123;					</span><br><span class="line">					<span class="comment">/*</span></span><br><span class="line"><span class="comment">					 * 大致思路是，利用遍历节点获取总高度，总高度大于500，则第一个节点向上移动-**</span></span><br><span class="line"><span class="comment">					 */</span></span><br><span class="line">					<span class="keyword">var</span> head=$(<span class="string">".head"</span>);</span><br><span class="line">					<span class="keyword">var</span> dialog=$(<span class="string">"#dialogue .dialogBox"</span>);</span><br><span class="line">					<span class="keyword">var</span> headHeight=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">var</span> dialogHeight=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;head.length;i++) &#123;</span><br><span class="line">						headHeight=headHeight+head[i].offsetHeight;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;dialog.length;j++) &#123;</span><br><span class="line">						dialogHeight=dialogHeight+dialog[j].offsetHeight;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="built_in">console</span>.log(headHeight,dialogHeight)</span><br><span class="line">					<span class="built_in">console</span>.log(headHeight+dialogHeight<span class="number">-600</span>)</span><br><span class="line">					$(<span class="string">'#dialogue'</span>).animate(&#123;</span><br><span class="line">					    scrollTop: headHeight+dialogHeight<span class="number">-600</span></span><br><span class="line">					 &#125;,<span class="number">500</span>)</span><br><span class="line">				&#125;,</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">var</span> audios=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">			el:<span class="string">"#audio"</span>,</span><br><span class="line">			data:&#123;</span><br><span class="line">				src:<span class="string">""</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">play</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="comment">//先将所有都暂停</span></span><br><span class="line">			<span class="comment">//点击暂停</span></span><br><span class="line">			$(<span class="string">".glyphicon-play-circle"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>)</span><br><span class="line">			$(<span class="string">".glyphicon-pause"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>)</span><br><span class="line">			<span class="comment">//点击播放</span></span><br><span class="line">			event.currentTarget.style.display=<span class="string">"none"</span></span><br><span class="line">			event.currentTarget.nextElementSibling.style.display=<span class="string">"block"</span></span><br><span class="line">			<span class="comment">//获取当前节点的上一个节点的值作为audio的src</span></span><br><span class="line">			<span class="keyword">var</span> src= event.currentTarget.previousElementSibling.firstChild.nodeValue;</span><br><span class="line"></span><br><span class="line">			audios.src=src</span><br><span class="line">			setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"audio"</span>).play();</span><br><span class="line">			&#125;,<span class="number">100</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">pause</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="comment">//点击暂停</span></span><br><span class="line">			$(<span class="string">".glyphicon-play-circle"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>)</span><br><span class="line">			$(<span class="string">".glyphicon-pause"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>)</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">"audio"</span>).pause();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> aud = <span class="built_in">document</span>.getElementById(<span class="string">"audio"</span>);</span><br><span class="line">		aud.onended = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		    $(<span class="string">".glyphicon-play-circle"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>)</span><br><span class="line">			$(<span class="string">".glyphicon-pause"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>)</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">displayText</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> test=event.currentTarget.parentNode.nextElementSibling.nextElementSibling.childNodes</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">var</span> tests;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;test.length;i++) &#123;</span><br><span class="line">				tests=tests+test[i].nodeValue</span><br><span class="line">			&#125;</span><br><span class="line"><span class="comment">//			利用正则表达式将udefind|null转换为空</span></span><br><span class="line">			<span class="keyword">var</span> nul=<span class="regexp">/undefined|null/g</span></span><br><span class="line">			tests= tests.replace(nul,<span class="string">''</span>)</span><br><span class="line">			event.currentTarget.firstChild.nodeValue=tests</span><br><span class="line">			event.currentTarget.parentNode.nextElementSibling.firstElementChild.firstChild.nodeValue=tests</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">displayTexts</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> test=event.currentTarget.parentNode.nextElementSibling.firstChild.nodeValue</span><br><span class="line">			<span class="built_in">console</span>.log(test)</span><br><span class="line">			event.currentTarget.firstChild.nodeValue=test</span><br><span class="line">			event.currentTarget.parentNode.previousElementSibling.firstElementChild.firstChild.nodeValue=test</span><br><span class="line">		&#125;</span><br><span class="line">		$(<span class="string">'#request'</span>).bind(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">		　　<span class="keyword">if</span> (event.keyCode == <span class="string">"13"</span>) &#123;</span><br><span class="line">				<span class="comment">//判断是否具有关键字，进行相关跳转</span></span><br><span class="line"><span class="comment">//				keyWord()</span></span><br><span class="line">				<span class="comment">//回车执行查询</span></span><br><span class="line">				vue.get()</span><br><span class="line">		　　&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">Related post</div>
+				<div>Comment</div>
+				<div>Share</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);" target="_blank" rel="noopener">To Top</a>
+		
+			<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" title="二级菜单多级联动" rel="prev">
+				&laquo;Pre post
+			</a>
+		
+		
+			<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" rel="next">
+				Next post&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" title="二级菜单多级联动">
+								二级菜单多级联动			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 26日, 2019				
+							</p>
+							<p class="relate-post-content">
+								二级菜单多级联动ps:看完之后仍然不懂请联系：qq:2090608207,备注进度条，相关解析在线帮你解决
+思路整理​        联动菜单无非是，子菜单根据父菜单的选项进行变更，这样便可以利用js去判断父级菜单选中进行子级菜单动态...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/26/%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E5%A4%9A%E7%BA%A7%E8%81%94%E5%8A%A8/" title="二级菜单多级联动">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="二级菜单多级联动"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+								正则表达式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 25日, 2019				
+							</p>
+							<p class="relate-post-content">
+								正则表达式简介：正则表达式，又称规则表达式。简单来说正则表达式本身就是描述一种规则，就是用来对字符进行操作。
+例如：身份证，手机号，邮箱等有规律的字符都可以利用正则表达式去进行匹配
+ps：这里仅提供简单操作，详细操作还请访问菜鸟教程等...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="正则表达式"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/24/%E8%BF%9B%E5%BA%A6%E6%9D%A1%E4%B8%8E%E6%AD%8C%E8%AF%8D%E5%90%8C%E6%AD%A5/" title="进度条与歌词同步">
+								进度条与歌词同步			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 24日, 2019				
+							</p>
+							<p class="relate-post-content">
+								进度条与歌词同步ps:因为进度条适合多种不同场合，这里没有代码，仅有理论和方法，看完之后仍然不懂请联系：qq:2090608207,备注lrc，相关解析在线帮你解决
+第一步：整理思路：
+​                    1)....
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/24/%E8%BF%9B%E5%BA%A6%E6%9D%A1%E4%B8%8E%E6%AD%8C%E8%AF%8D%E5%90%8C%E6%AD%A5/" title="进度条与歌词同步">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="进度条与歌词同步"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/23/%E8%BD%AE%E6%92%ADlrc%E6%AD%8C%E8%AF%8D%E6%96%87%E4%BB%B6/" title="轮播lrc歌词文件">
+								轮播lrc歌词文件			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 23日, 2019				
+							</p>
+							<p class="relate-post-content">
+								lrc歌词文件轮播播放ps:看完之后仍然不懂请联系：qq:2090608207,备注lrc轮播播放，相关解析在线帮你解决
+原歌曲： http://audio04.dmhmusic.com/71_53_T10046455719_128_...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/23/%E8%BD%AE%E6%92%ADlrc%E6%AD%8C%E8%AF%8D%E6%96%87%E4%BB%B6/" title="轮播lrc歌词文件">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="轮播lrc歌词文件"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/22/lrc%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="lrc文件解析">
+								lrc文件解析			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 22日, 2019				
+							</p>
+							<p class="relate-post-content">
+								lrc文件解析ps:看完之后仍然不懂请联系：qq:2090608207,备注lrc，相关解析在线帮你解决
+能找到这里就应该知道lrc是歌词文件了原歌曲： http://audio04.dmhmusic.com/71_53_T10046...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/22/lrc%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="lrc文件解析">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="lrc文件解析"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/21/%E8%BF%9B%E5%BA%A6%E6%9D%A1/" title="进度条">
+								进度条			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 21日, 2019				
+							</p>
+							<p class="relate-post-content">
+								进度条ps:看完之后仍然不懂请联系：qq:2090608207,备注进度条，相关解析在线帮你解决
+注：一下数据会根据个人设置有所变化，还望各位吃透原理在进行相关更改，并非一味照抄思路整理，正常进度条如下所示
+
+通过观察发现一个进度条需...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/21/%E8%BF%9B%E5%BA%A6%E6%9D%A1/" title="进度条">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="进度条"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" title="跨域的一些问题：">
+								跨域的一些问题：			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 18日, 2019				
+							</p>
+							<p class="relate-post-content">
+								跨域的一些问题：
+​    1.浏览器的同源政策
+​    2.ajax跨域
+​    3.jsonp跨域解决方案
+一、浏览器的同源政策
+​            同源是指：协议相同，域名相同，端口相同
+​            浏览...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/18/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A/" title="跨域的一些问题：">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="跨域的一些问题："/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" title="为大家提供一些免费的API">
+								为大家提供一些免费的API			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 17日, 2019				
+							</p>
+							<p class="relate-post-content">
+								为大家提供一些免费的API
+以下api由简书提供：​            （1）.视频接口                        https://api.apiopen.top/todayVideo
+​           ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/17/%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%8F%90%E4%BE%9B%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E7%9A%84API/" title="为大家提供一些免费的API">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="为大家提供一些免费的API"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/16/%E5%88%A9%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD/" title="利用第三方接口进行转发功能">
+								利用第三方接口进行转发功能			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 16日, 2019				
+							</p>
+							<p class="relate-post-content">
+								利用第三方接口进行转发功能方法1：​            利用jqurey的share分享插件
+​            原文链接：http://www.jq22.com/jquery-info13612
+​            ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/16/%E5%88%A9%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD/" title="利用第三方接口进行转发功能">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="利用第三方接口进行转发功能"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran(' target="_blank" rel="noopener"s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran(' target="_blank" rel="noopener"t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" target="_blank" rel="noopener"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
